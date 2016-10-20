@@ -3,4 +3,5 @@ user_<%= i %>:
   full_name: <%= "user_#{i}" %>
   password_digest: <%= BCrypt::Password.create('password') %>
   token: <%= SecureRandom.base58(24) %>
+  updated_at: <%= i == 5 ? 1.hour.ago.to_date : Time.now %>
 <% end %>
